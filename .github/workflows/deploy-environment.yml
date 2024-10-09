@@ -1,14 +1,10 @@
 name: Caller
 
 on:
- workflow_dispatch:
+ workflow_call:
   inputs:
    environment:
-    type: choice
-    options:
-    - development
-    - staging
-    - production
+    type: string
 
 jobs:
  job_environment:
