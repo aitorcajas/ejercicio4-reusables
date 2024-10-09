@@ -1,0 +1,28 @@
+name: Caller
+
+on:
+ workflow_dispatch:
+  inputs:
+   environment:
+    type: choice
+    - development
+    - staging
+    - production
+  outputs:
+   API_URL: ${{steps.api.outputs.API_URL}}
+   LOG_LEVEL: ${{steps.log.outputs.LOG_LEVEL}}
+
+jobs:
+ job_environment:
+  runs-on: ubuntu-latest
+  steps:
+  - name: api
+    run: echo "API_URL=${{vars.API_URL}}" >> $GITHUB_OUTPUT
+
+  - name: log  
+    run: echo "API_URL=${{vars.LOG_LEVEL}}" >> $GITHUB_OUTPUT
+
+  - name: imprimir variables
+    run: |
+     echo "API_URL ${{steps.api.outputs.API_URL}}"
+     echo "LOG_LEVEL ${{steps.log.outputs.LOG_LEVEL}}"
