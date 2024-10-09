@@ -19,7 +19,7 @@ jobs:
     run: echo "API_URL=${{vars.API_URL}}" >> $GITHUB_OUTPUT
 
   - id: log
-    run: echo "API_URL=${{vars.LOG_LEVEL}}" >> $GITHUB_OUTPUT
+    run: echo "LOG_LEVEL=${{vars.LOG_LEVEL}}" >> $GITHUB_OUTPUT
 
   - name: imprimir variables
     run: |
