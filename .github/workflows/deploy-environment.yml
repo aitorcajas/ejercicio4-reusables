@@ -5,6 +5,7 @@ on:
   inputs:
    environment:
     type: choice
+    options:
     - development
     - staging
     - production
