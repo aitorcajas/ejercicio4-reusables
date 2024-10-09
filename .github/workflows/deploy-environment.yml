@@ -9,9 +9,6 @@ on:
     - development
     - staging
     - production
-  outputs:
-   API_URL: ${{steps.api.outputs.API_URL}}
-   LOG_LEVEL: ${{steps.log.outputs.LOG_LEVEL}}
 
 jobs:
  job_environment:
