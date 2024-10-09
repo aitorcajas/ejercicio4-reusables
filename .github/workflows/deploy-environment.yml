@@ -5,6 +5,7 @@ on:
   inputs:
    environment:
     type: string
+    default: development
 
 jobs:
  job_environment:
