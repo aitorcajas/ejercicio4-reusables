@@ -13,13 +13,13 @@ on:
 jobs:
  job_environment:
   runs-on: ubuntu-latest
-  environment: ${{ github.events.inputs.environment }}
+  environment: ${{github.event.inputs.environment}}
   steps:
-  - name: api
-    run: echo "API_URL=${{ vars.API_URL }}" >> $GITHUB_OUTPUT
+  - id: api
+    run: echo "API_URL=${{vars.API_URL}}" >> $GITHUB_OUTPUT
 
-  - name: log  
-    run: echo "API_URL=${{ vars.LOG_LEVEL }}" >> $GITHUB_OUTPUT
+  - id: log
+    run: echo "API_URL=${{vars.LOG_LEVEL}}" >> $GITHUB_OUTPUT
 
   - name: imprimir variables
     run: |
